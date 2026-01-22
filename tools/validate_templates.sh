@@ -44,8 +44,8 @@ for template_dir in "$TEMPLATES_DIR"/*/; do
 
     # Install dependencies
     echo "Installing dependencies..."
-    forge install OpenZeppelin/openzeppelin-contracts --no-commit --quiet || true
-    forge install foundry-rs/forge-std --no-commit --quiet || true
+    forge install OpenZeppelin/openzeppelin-contracts --no-git --quiet || true
+    forge install foundry-rs/forge-std --no-git --quiet || true
 
     # Check formatting
     echo "Checking format..."
