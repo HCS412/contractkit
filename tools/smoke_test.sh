@@ -40,8 +40,8 @@ find . -type f \( -name "*.sol" -o -name "*.md" -o -name "*.toml" \) -exec \
 find . -name "*.bak" -delete
 
 echo "2. Installing dependencies..."
-forge install OpenZeppelin/openzeppelin-contracts --no-commit --quiet
-forge install foundry-rs/forge-std --no-commit --quiet
+forge install OpenZeppelin/openzeppelin-contracts --no-git --quiet
+forge install foundry-rs/forge-std --no-git --quiet
 
 echo "3. Building..."
 forge build
