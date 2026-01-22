@@ -17,6 +17,7 @@ contract EscrowTest is Test {
         arbiter = makeAddr("arbiter");
 
         vm.deal(payer, 10 ether);
+        vm.deal(payee, 10 ether);
 
         vm.prank(payer);
         escrow = new Escrow(payee, arbiter, AMOUNT);

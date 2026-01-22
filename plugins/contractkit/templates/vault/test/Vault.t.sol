@@ -82,7 +82,9 @@ contract VaultTest is Test {
         vault.deposit{value: 1 ether}();
 
         vm.prank(user1);
-        vm.expectRevert(abi.encodeWithSelector(Vault.InsufficientBalance.selector, 2 ether, 1 ether));
+        vm.expectRevert(
+            abi.encodeWithSelector(Vault.InsufficientBalance.selector, 2 ether, 1 ether)
+        );
         vault.withdraw(2 ether);
     }
 
