@@ -1,6 +1,19 @@
 # ContractKit
 
+[![CI](https://github.com/HCS412/contractkit/actions/workflows/ci.yml/badge.svg)](https://github.com/HCS412/contractkit/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/HCS412/contractkit/releases/tag/v0.1.0)
+[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-purple.svg)](https://claude.ai/code)
+
 A Claude Code plugin for generating complete, production-ready smart contract projects from safe templates.
+
+## Why ContractKit?
+
+- **Skip the boilerplate** - Generate complete Foundry projects with one command
+- **Security-first templates** - OpenZeppelin-based contracts with ReentrancyGuard, AccessControl, and threat models
+- **Test coverage included** - Every template comes with comprehensive Foundry tests
+- **Deploy anywhere** - Local Anvil, Sepolia testnet, or mainnet with the same workflow
+- **Learn as you build** - `/explain` and `/audit-lite` commands help you understand your contracts
 
 ContractKit enforces best-practice defaults while remaining configurable. It provides commands to scaffold projects, run tests, manage local chains, deploy contracts, interact with deployments, and produce risk reports.
 
