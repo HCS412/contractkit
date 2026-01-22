@@ -30,6 +30,7 @@ Skills are Claude Code instructions that guide the AI through workflows.
 | local | Start local blockchain |
 | deploy | Deploy to networks |
 | call | Interact with contracts |
+| status | Show project and deployment info |
 | explain | Document contracts |
 | audit-lite | Generate risk reports |
 
@@ -96,6 +97,46 @@ ContractKit stores minimal state:
 | `.env` | User configuration |
 
 No remote state. Everything is local and version-controllable.
+
+## Deployments Schema
+
+Deployment addresses are stored in `deployments/<network>.json`:
+
+```json
+{
+  "Token": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+}
+```
+
+### Schema Definition
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `<ContractName>` | string (address) | Yes | Deployed contract address |
+
+### Network Files
+
+| File | Network | Chain ID |
+|------|---------|----------|
+| `deployments/local.json` | Local Anvil | 31337 |
+| `deployments/sepolia.json` | Sepolia testnet | 11155111 |
+
+### Extended Schema (optional)
+
+For richer tracking, deployments can include metadata:
+
+```json
+{
+  "Token": {
+    "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    "deployedAt": "2024-01-15T10:30:00Z",
+    "deployer": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "txHash": "0x..."
+  }
+}
+```
+
+The `/call` and `/status` skills support both simple (address-only) and extended formats.
 
 ## Design Principles
 

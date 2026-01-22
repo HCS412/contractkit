@@ -4,11 +4,39 @@ A Claude Code plugin for generating complete, production-ready smart contract pr
 
 ContractKit enforces best-practice defaults while remaining configurable. It provides commands to scaffold projects, run tests, manage local chains, deploy contracts, interact with deployments, and produce risk reports.
 
+## Installation
+
+### Option A: Install from GitHub (recommended)
+
+```bash
+claude /plugin install https://github.com/HCS412/contractkit
+```
+
+### Option B: Add as marketplace source
+
+```bash
+# Add the marketplace source
+claude /plugin marketplace add HCS412/contractkit
+
+# Then install
+claude /plugin install contractkit
+```
+
+### Local Development
+
+For plugin development and testing:
+
+```bash
+git clone https://github.com/HCS412/contractkit.git
+cd contractkit
+claude --plugin-dir ./plugins/contractkit
+```
+
 ## Quickstart (60-second demo)
 
 ```bash
-# 1. Install the plugin
-claude /plugin install contractkit
+# 1. Install the plugin (if not already installed)
+claude /plugin install https://github.com/HCS412/contractkit
 
 # 2. Generate an ERC20 project
 claude /contractkit:new --blueprint erc20 --name "MyToken" --symbol "MTK"
@@ -43,6 +71,7 @@ claude /contractkit:call balanceOf --args "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb
 | `/contractkit:local` | Start local Anvil chain |
 | `/contractkit:deploy <network>` | Deploy to local or Sepolia |
 | `/contractkit:call <fn>` | Call contract functions |
+| `/contractkit:status` | Show project status and deployments |
 | `/contractkit:explain` | Explain what a contract does |
 | `/contractkit:audit-lite` | Generate a risk report (not an audit) |
 

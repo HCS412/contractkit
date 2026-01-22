@@ -4,7 +4,7 @@
   "description": "Generate complete smart contract projects from safe templates. Scaffold, test, deploy, and interact with Foundry-based contracts.",
   "author": "ContractKit Contributors",
   "license": "MIT",
-  "repository": "https://github.com/your-org/contractkit",
+  "repository": "https://github.com/HCS412/contractkit",
   "keywords": ["solidity", "foundry", "smart-contracts", "ethereum", "web3"],
   "skills": [
     {
@@ -31,6 +31,11 @@
       "name": "call",
       "description": "Call functions on deployed contracts",
       "path": "skills/call/SKILL.md"
+    },
+    {
+      "name": "status",
+      "description": "Show project status and deployment information",
+      "path": "skills/status/SKILL.md"
     },
     {
       "name": "explain",
