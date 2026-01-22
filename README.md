@@ -7,18 +7,11 @@ ContractKit enforces best-practice defaults while remaining configurable. It pro
 ## Installation
 
 ```bash
-/plugin install HCS412/contractkit
-```
-
-**Alternative methods:**
-
-```bash
-# Full GitHub URL (if short form fails)
-/plugin install https://github.com/HCS412/contractkit
-
-# Or add as marketplace source
+# Step 1: Add the marketplace
 /plugin marketplace add HCS412/contractkit
-/plugin install contractkit
+
+# Step 2: Install the plugin
+/plugin install contractkit@HCS412/contractkit
 ```
 
 ### Local Development
@@ -33,7 +26,8 @@ claude --plugin-dir ./plugins/contractkit
 
 ```bash
 # 1. Install the plugin
-/plugin install HCS412/contractkit
+/plugin marketplace add HCS412/contractkit
+/plugin install contractkit@HCS412/contractkit
 
 # 2. Generate an ERC20 project
 /contractkit:new erc20 MyToken MTK
