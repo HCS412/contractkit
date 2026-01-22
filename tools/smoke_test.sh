@@ -67,11 +67,16 @@ PRIVATE_KEY="0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
 forge script script/Deploy.s.sol --rpc-url http://127.0.0.1:8546 --broadcast --private-key "$PRIVATE_KEY"
 
 echo "7. Calling contract..."
-# Get deployed address from broadcast
-DEPLOYED_ADDRESS=$(cat broadcast/Deploy.s.sol/31337/run-latest.json | grep -o '"contractAddress":"0x[^"]*"' | head -1 | cut -d'"' -f4)
+# Get deployed address from broadcast - use jq if available, fallback to grep
+if command -v jq &> /dev/null; then
+    DEPLOYED_ADDRESS=$(jq -r '.transactions[0].contractAddress' broadcast/Deploy.s.sol/31337/run-latest.json)
+else
+    DEPLOYED_ADDRESS=$(grep -o '"contractAddress":"0x[a-fA-F0-9]*"' broadcast/Deploy.s.sol/31337/run-latest.json | head -1 | sed 's/"contractAddress":"//;s/"//')
+fi
 
-if [ -z "$DEPLOYED_ADDRESS" ]; then
+if [ -z "$DEPLOYED_ADDRESS" ] || [ "$DEPLOYED_ADDRESS" = "null" ]; then
     echo "FAIL: Could not find deployed address"
+    cat broadcast/Deploy.s.sol/31337/run-latest.json
     exit 1
 fi
 
