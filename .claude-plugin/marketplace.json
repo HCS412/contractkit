@@ -1,16 +1,24 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "HCS412/contractkit",
-  "description": "Marketplace source for ContractKit - a Claude Code plugin for smart contract development",
+  "description": "Claude Code plugin for generating complete Foundry smart contract projects",
+  "owner": {
+    "name": "HCS412",
+    "url": "https://github.com/HCS412"
+  },
   "plugins": [
     {
       "name": "contractkit",
       "description": "Generate complete smart contract projects from safe templates. Scaffold, test, deploy, and interact with Foundry-based contracts.",
       "version": "0.1.0",
+      "author": {
+        "name": "HCS412",
+        "url": "https://github.com/HCS412"
+      },
       "source": "plugins/contractkit",
-      "repository": "https://github.com/HCS412/contractkit",
-      "keywords": ["solidity", "foundry", "smart-contracts", "ethereum", "web3"],
-      "author": "HCS412",
-      "license": "MIT"
+      "homepage": "https://github.com/HCS412/contractkit",
+      "category": "development",
+      "keywords": ["solidity", "foundry", "smart-contracts", "ethereum", "web3"]
     }
   ]
 }
