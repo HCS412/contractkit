@@ -6,25 +6,22 @@ ContractKit enforces best-practice defaults while remaining configurable. It pro
 
 ## Installation
 
-### Option A: Install from GitHub (recommended)
-
 ```bash
-claude /plugin install https://github.com/HCS412/contractkit
+/plugin install HCS412/contractkit
 ```
 
-### Option B: Add as marketplace source
+**Alternative methods:**
 
 ```bash
-# Add the marketplace source
-claude /plugin marketplace add HCS412/contractkit
+# Full GitHub URL (if short form fails)
+/plugin install https://github.com/HCS412/contractkit
 
-# Then install
-claude /plugin install contractkit
+# Or add as marketplace source
+/plugin marketplace add HCS412/contractkit
+/plugin install contractkit
 ```
 
 ### Local Development
-
-For plugin development and testing:
 
 ```bash
 git clone https://github.com/HCS412/contractkit.git
@@ -35,22 +32,27 @@ claude --plugin-dir ./plugins/contractkit
 ## Quickstart (60-second demo)
 
 ```bash
-# 1. Install the plugin (if not already installed)
-claude /plugin install https://github.com/HCS412/contractkit
+# 1. Install the plugin
+/plugin install HCS412/contractkit
 
 # 2. Generate an ERC20 project
-claude /contractkit:new --blueprint erc20 --name "MyToken" --symbol "MTK"
+/contractkit:new erc20 MyToken MTK
 
 # 3. Run tests
 cd contractkit-projects/mytoken
-claude /contractkit:test
+/contractkit:test
 
-# 4. Start local chain and deploy
-claude /contractkit:local
-claude /contractkit:deploy local
+# 4. Start local chain
+/contractkit:local
 
-# 5. Interact with your contract
-claude /contractkit:call balanceOf --args "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+# 5. Deploy
+/contractkit:deploy local
+
+# 6. Mint tokens
+/contractkit:call mint --args "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266" "1000000000000000000"
+
+# 7. Check balance
+/contractkit:call balanceOf --args "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
 ```
 
 ## Supported Blueprints
