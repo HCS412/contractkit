@@ -3,7 +3,6 @@
 [![CI](https://github.com/HCS412/contractkit/actions/workflows/ci.yml/badge.svg)](https://github.com/HCS412/contractkit/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/HCS412/contractkit/releases/tag/v0.1.0)
-[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-purple.svg)](https://claude.ai/code)
 
 A Claude Code plugin for generating complete, production-ready smart contract projects from safe templates.
 
