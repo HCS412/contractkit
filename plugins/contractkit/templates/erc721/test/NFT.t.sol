@@ -7,9 +7,14 @@ import {IERC721Receiver} from "@openzeppelin/contracts/token/ERC721/IERC721Recei
 
 contract NFTTest is Test, IERC721Receiver {
     /// @dev Required for receiving ERC721 tokens when test contract is the receiver
-    function onERC721Received(address, address, uint256, bytes calldata) external pure returns (bytes4) {
+    function onERC721Received(address, address, uint256, bytes calldata)
+        external
+        pure
+        returns (bytes4)
+    {
         return IERC721Receiver.onERC721Received.selector;
     }
+
     NFT public nft;
     address public admin;
     address public minter;
