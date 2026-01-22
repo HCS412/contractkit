@@ -1,0 +1,84 @@
+name: Bug Report
+description: Report a bug in ContractKit
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please fill out the sections below.
+
+  - type: input
+    id: version
+    attributes:
+      label: ContractKit Version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: template
+    attributes:
+      label: Template/Blueprint
+      options:
+        - erc20
+        - erc721
+        - escrow
+        - vault
+        - N/A
+    validations:
+      required: true
+
+  - type: dropdown
+    id: skill
+    attributes:
+      label: Skill/Command
+      options:
+        - /contractkit:new
+        - /contractkit:test
+        - /contractkit:local
+        - /contractkit:deploy
+        - /contractkit:call
+        - /contractkit:explain
+        - /contractkit:audit-lite
+        - N/A
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this?
+      placeholder: |
+        1. Run /contractkit:new ...
+        2. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Foundry version, Claude Code version
+      placeholder: |
+        - OS: macOS 14.0
+        - Foundry: 0.2.0
+        - Claude Code: 1.0.0
+    validations:
+      required: false

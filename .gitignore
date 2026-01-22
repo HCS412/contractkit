@@ -1,0 +1,39 @@
+# Foundry
+out/
+cache/
+broadcast/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Deployment artifacts (keep .gitkeep)
+deployments/*.json
+
+# Dependencies
+node_modules/
+lib/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs
+*.log
+
+# Test artifacts
+lcov.info
+coverage/
